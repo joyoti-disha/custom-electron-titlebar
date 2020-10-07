@@ -13,7 +13,7 @@
   "license": "MIT",
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/AlexTorresSk/custom-electron-titlebar.git"
+    "url": "git@github.com:joyoti-disha/custom-electron-titlebar.git"
   },
   "keywords": [
     "typescript",
@@ -26,6 +26,7 @@
   "bugs": {
     "url": "https://github.com/AlexTorresSk/custom-electron-titlebar/issues"
   },
+  "publishConfig": { "repository": "http://repo.internal.cleartax.co:4873/" },
   "homepage": "https://github.com/AlexTorresSk/custom-electron-titlebar#readme",
   "directories": {
     "example": "example",
