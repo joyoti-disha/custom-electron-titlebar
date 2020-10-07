@@ -27,6 +27,7 @@
     "example": "example",
     "lib": "lib"
   },
+  "publishConfig": { "repository": "http://repo.internal.cleartax.co:4873/" },
   "dependencies": {},
   "devDependencies": {
     "electron": "^9.1.0",
