@@ -113,7 +113,7 @@ export class Themebar extends ThemingRegistry {
                 background-position: center center;
                 background-size: 16px;
                 flex-shrink: 0;
-                margin-left: 200px;
+                margin-left: 230px;
             }
             `);
         });
@@ -141,6 +141,17 @@ export class Themebar extends ThemingRegistry {
                 align-items: center;
                 box-sizing: border-box;
                 padding: 2px 6px;
+                cursor: default;
+                -webkit-app-region: no-drag;
+                zoom: 1;
+                white-space: nowrap;
+                outline: 0;
+            }
+
+            .menubar .menubar-menu-button-icon {
+                align-items: center;
+                box-sizing: border-box;
+                padding: 5px 6px;
                 cursor: default;
                 -webkit-app-region: no-drag;
                 zoom: 1;

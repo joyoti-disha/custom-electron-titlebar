@@ -201,13 +201,16 @@ export class Menubar extends Disposable {
 			const menuIndex = this.menuItems.length;
 			const cleanMenuLabel = cleanMnemonic(menubarMenu.label);
 
-			const buttonElement = $('div.menubar-menu-button', { 'role': 'menuitem', 'tabindex': -1, 'aria-label': cleanMenuLabel, 'aria-haspopup': true });
+			let buttonElement = $('div.menubar-menu-button', { 'role': 'menuitem', 'tabindex': -1, 'aria-label': cleanMenuLabel, 'aria-haspopup': true });
+            if(iconMap[menubarMenu.label]){
+                 buttonElement = $('div.menubar-menu-button-icon', { 'role': 'menuitem', 'tabindex': -1, 'aria-label': cleanMenuLabel, 'aria-haspopup': true });
+            }
 			if (!menubarMenu.enabled) {
 				addClass(buttonElement, 'disabled');
 			}
 			let titleElement = $('div.menubar-menu-title', { 'role': 'none', 'aria-hidden': true });
 			if(iconMap[menubarMenu.label]){
-				titleElement = $('img.menubar-menu-title', { 'role': 'none', 'id': menubarMenu.id || '', 'aria-hidden': true, 'src': iconMap[menubarMenu.label], 'height': '24px', 'width': '24px', 'title':titleMap[menubarMenu.label]});
+				titleElement = $('img.menubar-menu-title', { 'role': 'none', 'id': menubarMenu.id || '', 'aria-hidden': true, 'src': iconMap[menubarMenu.label], 'height': '18px', 'width': '18px', 'title':titleMap[menubarMenu.label]});
 			}
 			buttonElement.appendChild(titleElement);
 			append(this.container, buttonElement);
