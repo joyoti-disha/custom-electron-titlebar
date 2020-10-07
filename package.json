@@ -9,7 +9,7 @@
     "dev": "electron example/main.js",
     "start": "npm run build && npm run dev"
   },
-  "author": "Alex Torres <alextorressk@gmail.com>",
+  "author": "Joyoti <joyoti.disha@cleartax.in>",
   "license": "MIT",
   "repository": {
     "type": "git",
@@ -23,11 +23,6 @@
     "windows",
     "linux"
   ],
-  "bugs": {
-    "url": "https://github.com/AlexTorresSk/custom-electron-titlebar/issues"
-  },
-  "publishConfig": { "repository": "http://repo.internal.cleartax.co:4873/" },
-  "homepage": "https://github.com/AlexTorresSk/custom-electron-titlebar#readme",
   "directories": {
     "example": "example",
     "lib": "lib"
