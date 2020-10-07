@@ -1,6 +1,6 @@
 {
   "name": "@cleartax/custom-electron-titlebar",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Custom Electron Titlebar is a library for electron that allows you to configure a fully customizable title bar.",
   "main": "lib/index.js",
   "types": "lib/index.d.ts",
@@ -27,7 +27,9 @@
     "example": "example",
     "lib": "lib"
   },
-  "publishConfig": { "repository": "http://repo.internal.cleartax.co:4873/" },
+  "publishConfig": {
+    "repository": "http://repo.internal.cleartax.co:4873/"
+  },
   "dependencies": {},
   "devDependencies": {
     "electron": "^9.1.0",
