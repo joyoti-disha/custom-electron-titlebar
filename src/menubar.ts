@@ -18,6 +18,9 @@ import { Disposable, IDisposable, dispose } from './common/lifecycle';
 import { Event, Emitter } from './common/event';
 import { domEvent } from './browser/event';
 import { isMacintosh } from './common/platform';
+const NEXT_BUTTON = 'https://assets1.cleartax-cdn.com/cleartax-gst/images/1601285439_arrow_forward.png';
+const BACK_BUTTON = 'https://assets1.cleartax-cdn.com/cleartax-gst/images/1601286407_arrow_back.png';
+const REFRESH_BUTTON = 'https://assets1.cleartax-cdn.com/cleartax-gst/images/1601287715_refresh_button.png';
 
 export interface MenubarOptions {
 	/**
@@ -180,6 +183,17 @@ export class Menubar extends Disposable {
 	setupMenubar(): void {
 		const topLevelMenus = this.options.menu.items;
 
+		const iconMap = {
+			['Back'] : BACK_BUTTON, 
+            ['Forward'] : NEXT_BUTTON,
+            ['Reload'] : REFRESH_BUTTON,
+		}
+		const titleMap = {
+            ['Back']: 'Click to go Back',
+            ['Forward'] : 'Click to go Forward',
+            ['Reload'] : 'Click to Reload Page',
+        }
+
 		this._register(this.onFocusStateChange(e => this._onFocusStateChange.fire(e)));
 		this._register(this.onVisibilityChange(e => this._onVisibilityChange.fire(e)));
 
@@ -191,8 +205,10 @@ export class Menubar extends Disposable {
 			if (!menubarMenu.enabled) {
 				addClass(buttonElement, 'disabled');
 			}
-			const titleElement = $('div.menubar-menu-title', { 'role': 'none', 'aria-hidden': true });
-
+			let titleElement = $('div.menubar-menu-title', { 'role': 'none', 'aria-hidden': true });
+			if(iconMap[menubarMenu.label]){
+				titleElement = $('img.menubar-menu-title', { 'role': 'none', 'id': menubarMenu.id || '', 'aria-hidden': true, 'src': iconMap[menubarMenu.label], 'height': '24px', 'width': '24px', 'title':titleMap[menubarMenu.label]});
+			}
 			buttonElement.appendChild(titleElement);
 			append(this.container, buttonElement);
 

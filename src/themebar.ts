@@ -39,13 +39,15 @@ export class Themebar extends ThemingRegistry {
         this.registerTheme((collector: CssStyle) => {
             collector.addRule(`
             .titlebar {
+                font-family: "Source Sans Pro", Arial, sans-serif;
                 position: absolute;
+                font-weight: 50;
                 top: 0;
                 left: 0;
                 right: 0;
                 box-sizing: border-box;
                 width: 100%;
-                font-size: 13px;
+                font-size: 12px;
                 padding: 0 16px;
                 overflow: hidden;
                 flex-shrink: 0;
@@ -111,6 +113,7 @@ export class Themebar extends ThemingRegistry {
                 background-position: center center;
                 background-size: 16px;
                 flex-shrink: 0;
+                margin-left: 200px;
             }
             `);
         });
@@ -125,6 +128,7 @@ export class Themebar extends ThemingRegistry {
                 height: 30px;
                 overflow: hidden;
                 flex-wrap: wrap;
+                margin-left: 20px;
             }
         
             .menubar.bottom {
@@ -136,7 +140,7 @@ export class Themebar extends ThemingRegistry {
             .menubar .menubar-menu-button {
                 align-items: center;
                 box-sizing: border-box;
-                padding: 0px 8px;
+                padding: 2px 6px;
                 cursor: default;
                 -webkit-app-region: no-drag;
                 zoom: 1;
@@ -313,12 +317,15 @@ export class Themebar extends ThemingRegistry {
         this.registerTheme((collector: CssStyle) => {
             collector.addRule(`
             .titlebar .window-title {
-                flex: 0 1 auto;
+                flex: 0 1 100px;
                 font-size: 12px;
-                overflow: hidden;
+                overflow: visible;
                 white-space: nowrap;
                 text-overflow: ellipsis;
-                margin: 0 auto;
+                margin-top:0;
+                margin-bottom:0;
+                margin-right:auto;
+                margin-left:0;
                 zoom: 1;
             }
             `);

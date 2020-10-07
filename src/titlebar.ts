@@ -207,11 +207,6 @@ export class Titlebar extends Themebar {
 
 		this.dragRegion = append(this.titlebar, $('div.titlebar-drag-region'));
 
-		// App Icon (Windows/Linux)
-		if (!isMacintosh && this._options.icon) {
-			this.appIcon = append(this.titlebar, $('div.window-appicon'));
-			this.updateIcon(this._options.icon);
-		}
 
 		// Menubar
 		this.menubarContainer = append(this.titlebar, $('div.menubar'));
@@ -220,6 +215,12 @@ export class Titlebar extends Themebar {
 		if (this._options.menu) {
 			this.updateMenu(this._options.menu);
 			this.updateMenuPosition(this._options.menuPosition);
+		}
+
+		// App Icon (Windows/Linux)
+		if (!isMacintosh && this._options.icon) {
+			this.appIcon = append(this.titlebar, $('div.window-appicon'));
+			this.updateIcon(this._options.icon);
 		}
 
 		// Title
@@ -558,7 +559,7 @@ export class Titlebar extends Themebar {
 
 			if (side === 'center' || side === undefined) {
 				this.title.style.marginRight = 'auto';
-				this.title.style.marginLeft = 'auto';
+				this.title.style.marginLeft = '0px';
 			}
 		}
 	}
