@@ -152,7 +152,7 @@ export class Themebar extends ThemingRegistry {
                 align-items: center;
                 box-sizing: border-box;
                 padding: 5px 6px;
-                cursor: default;
+                cursor: pointer;
                 -webkit-app-region: no-drag;
                 zoom: 1;
                 white-space: nowrap;
