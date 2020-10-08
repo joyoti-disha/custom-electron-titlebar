@@ -303,7 +303,7 @@ export class Themebar extends ThemingRegistry {
             }
 
             .menubar-menu-container .menu-item-icon {
-                width: 18px;
+                width: 0px;
                 height: 18px;
                 margin: 0 0 0 1.1em;
             }

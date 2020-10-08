@@ -21,6 +21,7 @@ import { isMacintosh } from './common/platform';
 const NEXT_BUTTON = 'https://assets1.cleartax-cdn.com/cleartax-gst/images/1601285439_arrow_forward.png';
 const BACK_BUTTON = 'https://assets1.cleartax-cdn.com/cleartax-gst/images/1601286407_arrow_back.png';
 const REFRESH_BUTTON = 'https://assets1.cleartax-cdn.com/cleartax-gst/images/1601287715_refresh_button.png';
+const RED_DOT = 'https://assets1.cleartax-cdn.com/cleartax-gst/images/1602169920_red_dot.svg';
 
 export interface MenubarOptions {
 	/**
@@ -186,7 +187,8 @@ export class Menubar extends Disposable {
 		const iconMap = {
 			['Back'] : BACK_BUTTON, 
             ['Forward'] : NEXT_BUTTON,
-            ['Reload'] : REFRESH_BUTTON,
+			['Reload'] : REFRESH_BUTTON,
+			['UpdateAvailable'] : RED_DOT,
 		}
 		const titleMap = {
             ['Back']: 'Click to go Back',
@@ -201,17 +203,18 @@ export class Menubar extends Disposable {
 			const menuIndex = this.menuItems.length;
 			const cleanMenuLabel = cleanMnemonic(menubarMenu.label);
 
-			let buttonElement = $('div.menubar-menu-button', { 'role': 'menuitem', 'tabindex': -1, 'aria-label': cleanMenuLabel, 'aria-haspopup': true });
+			let buttonElement = $('div.menubar-menu-button', { 'id': menubarMenu.id || '','role': 'menuitem', 'tabindex': -1, 'aria-label': cleanMenuLabel, 'aria-haspopup': true });
             if(iconMap[menubarMenu.label]){
-                 buttonElement = $('div.menubar-menu-button-icon', { 'role': 'menuitem', 'tabindex': -1, 'aria-label': cleanMenuLabel, 'aria-haspopup': true });
+                 buttonElement = $('div.menubar-menu-button-icon', { 'id': menubarMenu.id || '','role': 'menuitem', 'tabindex': -1, 'aria-label': cleanMenuLabel, 'aria-haspopup': true });
             }
 			if (!menubarMenu.enabled) {
 				addClass(buttonElement, 'disabled');
 			}
-			let titleElement = $('div.menubar-menu-title', { 'role': 'none', 'aria-hidden': true });
+			let titleElement = $('div.menubar-menu-title', { 'id': menubarMenu.id || '','role': 'none', 'aria-hidden': true });
 			if(iconMap[menubarMenu.label]){
 				titleElement = $('img.menubar-menu-title', { 'role': 'none', 'id': menubarMenu.id || '', 'aria-hidden': true, 'src': iconMap[menubarMenu.label], 'height': '18px', 'width': '18px', 'title':titleMap[menubarMenu.label]});
 			}
+
 			buttonElement.appendChild(titleElement);
 			append(this.container, buttonElement);
 
