@@ -21,7 +21,6 @@ import { isMacintosh } from './common/platform';
 const NEXT_BUTTON = 'https://assets1.cleartax-cdn.com/cleartax-gst/images/1601285439_arrow_forward.png';
 const BACK_BUTTON = 'https://assets1.cleartax-cdn.com/cleartax-gst/images/1601286407_arrow_back.png';
 const REFRESH_BUTTON = 'https://assets1.cleartax-cdn.com/cleartax-gst/images/1601287715_refresh_button.png';
-const RED_DOT = 'https://assets1.cleartax-cdn.com/cleartax-gst/images/1602169920_red_dot.svg';
 
 export interface MenubarOptions {
 	/**
@@ -188,7 +187,6 @@ export class Menubar extends Disposable {
 			['Back'] : BACK_BUTTON, 
             ['Forward'] : NEXT_BUTTON,
 			['Reload'] : REFRESH_BUTTON,
-			['UpdateAvailable'] : RED_DOT,
 		}
 		const titleMap = {
             ['Back']: 'Click to go Back',
