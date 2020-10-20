@@ -146,6 +146,7 @@ export class Themebar extends ThemingRegistry {
                 zoom: 1;
                 white-space: nowrap;
                 outline: 0;
+                height: 30px;
             }
 
             .menubar .menubar-menu-button-icon {
